@@ -13,13 +13,11 @@ var dbConfig = {
     }
 }
 
-//instatiate a connection object (make connection in application entry point)
-  var conn = new sql.Connection(dbConfig);
-
- //instantiate a request object used to make request to the server 
-  var req = new sql.Request(conn); 
+ //instatiate a connection object (make connection in application entry point)
+var conn = new sql.Connection(dbConfig);
 
 exports.getDB = function(){
+ 
     conn.connect(function(err){
       if(err){
           console.log(err);
@@ -27,5 +25,16 @@ exports.getDB = function(){
       }
       
       console.log('connected to Db Server');
+     
     });
+}
+
+exports.request = function(){
+     //instantiate a request object used to make request to the server 
+  var request = new sql.Request(conn); 
+  return request  
+}
+
+exports.conn = function(){
+    return conn; 
 }
