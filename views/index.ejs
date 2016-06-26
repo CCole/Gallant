@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="Gallant">
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/styles.css' />
+    <link rel="stylesheet" href="/stylesheets/jquery-data-tables.css">
+		<link rel="stylesheet" href="/stylesheets/jquery-data-tables-bs3.css">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div>
+      <div ng-controller="staffQuals">
+        <div>
+          <table datatable="ng" class="row-border hover" dt-options="datatableOptions">
+            <thead>
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Position</th>
+							<th>Office</th>
+							<th>Age</th>
+							<th>Start Date</th>
+							<th>Salary</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="person in ::persons track by person.id">
+							<td>[[ person.id ]]</td>
+							<td>[[ person.name ]]</td>
+							<td>[[ person.position ]]</td>
+							<td>[[ person.office ]]</td>
+							<td>[[ person.age ]]</td>
+							<td>[[ person.startDate ]]</td>
+							<td>[[ person.salary ]]</td>
+						</tr>
+					</tbody>
+          </table>
+          
+        </div>
+      </div>
+      <h1><%= title %></h1>
+      <p>Welcome to <%= title %></p>
+    </div>
   </body>
 </html>
