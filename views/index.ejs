@@ -2,13 +2,25 @@
 <html>
   <head>
     <title>Gallant Test</title>
-    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <!--<link rel='stylesheet' href='/stylesheets/bootstrap.css' />-->
+    <link rel='stylesheet' type="text/css" href='/stylesheets/jquery.dataTables.css'/>
+    
   </head>
   <body>
     <h1>Gallant Test</h1>
     <p>Welcome to a Gallant test </p>
-    <table class="table table-sm">
+    <table id="tst_tbl">
+      <thead>
+      <tr>
+        <th>Staff ID</th>
+        <th>Staff Type</th>
+        <th>NPI Number</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+      </tr>
+    </thead>
     <% for(var i=0; i < records.length; i++) { %>
+    
       <tr>
         <td><%= records[i].SQUIRE_STAFF_ID %></td>
         <td><%= records[i].Staff_Type %></td>
@@ -18,5 +30,10 @@
       </tr> 
     <% } %> 
     </table>
+     <script type="text/javascript" charset="utf8" src="/javascripts/jquery-3.0.0.js"></script>
+     <script type="text/javascript" charset="utf8" src="/javascripts/jquery.dataTables.js"></script>
+     <script type="text/javascript" charset="utf8" src="/javascripts/datatables.bootstrap.js"></script>
+     <script type="text/javascript" charset="utf8" src="/javascripts/makeDT.js"></script>
+     
   </body>
 </html>
