@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Gallant Test</title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Gallant Test</h1>
+    <p>Welcome to a Gallant test </p>
+    <table class="table table-sm">
+    <% for(var i=0; i < records.length; i++) { %>
+      <tr>
+        <td><%= records[i].SQUIRE_STAFF_ID %></td>
+        <td><%= records[i].Staff_Type %></td>
+        <td><%= records[i].NPI_Number %></td>
+        <td><%= records[i].First_Name %></td>
+        <td><%= records[i].Last_Name %></td>  
+      </tr> 
+    <% } %> 
+    </table>
   </body>
 </html>

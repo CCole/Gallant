@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
           }
               else {
                   console.log(typeof recordset);
-                  res.render('index', { title: JSON.stringify(recordset) });
+                  res.render('index', { records: recordset });
               }
              conn.close();
       });
