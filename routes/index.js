@@ -7,13 +7,13 @@ var conn = db.conn();
 
 router.get('/', function(req, res, next) { 
   console.log(db.request);
-  request.query("SELECT * FROM Staff", function (err, recordset){
+ request.query("SELECT * FROM Staff", function (err, recordset){
           if(err){
               console.log(err);
           }
               else {
-                  console.log(typeof recordset);
-                  res.render('index', { title: JSON.stringify(recordset) });
+                  console.log(typeof records);
+                  res.render('index', { records: recordset });
               }
              conn.close();
       });
