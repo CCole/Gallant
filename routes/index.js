@@ -12,10 +12,10 @@ router.get('/', function(req, res, next) {
               console.log(err);
           }
               else {
-                  console.log(typeof records);
-                  res.render('index', { records: recordset });
+                  console.log(typeof recordset);
+                  res.json(recordset);
               }
-             conn.close();
+             //conn.close();
       });
       
       
