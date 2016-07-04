@@ -1,13 +1,13 @@
 $(function() {
-    $.ajax({
+   /* $.ajax({
         type: "Get",
         url: "/staff",
         dataType: "json"
     }).done(function(data) { console.log(data)}).fail(function(jqXHR,textStatus,errorThrown){
-        console.log(errorThrown)}); 
+        console.log(errorThrown)}); */
 
 console.log('in iife'); 
-/*    $("#jsGrid").jsGrid({
+    $("#jsGrid").jsGrid({
         height: "70%",
         width: "100%",
         filtering: false,
@@ -23,7 +23,7 @@ console.log('in iife');
             loadData: function(filter) {
         return $.ajax({
             type: "GET",
-            url: "/",
+            url: "/staff",
             data: filter,
             dataType: "json"
         });
@@ -38,7 +38,7 @@ console.log('in iife');
             { name: "Last_Name", type: "text", width: 100}
           
         ]
-    });*/
+    });
     
 });
 
